@@ -4,35 +4,7 @@
 
 This project implements a comprehensive **LLM Price Prediction System** that combines multiple machine learning approaches including **Profit-Optimized LSTM** and **SAC Reinforcement Learning** to create superior trading strategies. The system demonstrates how modern AI techniques can significantly outperform traditional financial strategies.
 
-## 🏗️ System Architecture
 
-```
-LLM Price Prediction System
-├── 📊 Data Collection & Processing
-│   ├── Stock price data (Yahoo Finance)
-│   ├── Technical indicators (80+ features)
-│   ├── News sentiment analysis
-│   └── Market microstructure data
-│
-├── 🧠 ML Trading Models
-│   ├── Profit-Optimized LSTM
-│   ├── Technical Analysis LSTM 
-│   ├── SAC Reinforcement Learning Agent
-│   ├── Feature Engineering Pipeline
-│   └── Signal Confidence Estimation
-│
-├── 🎯 Reinforcement Learning
-│   ├── SAC (Soft Actor-Critic) Agent
-│   ├── Custom Trading Environment
-│   ├── Experience Replay Buffer
-│   └── Continuous Action Space
-│
-└── 📈 Strategy Evaluation
-    ├── ML vs Traditional Strategy Comparison
-    ├── Performance Metrics Analysis
-    ├── Risk-Adjusted Returns
-    └── Visualization & Reporting
-```
 
 ## 🎯 Key Features
 
@@ -122,7 +94,7 @@ seaborn>=0.11.0
 ### Quick Start
 ```bash
 # 1. Clone the repository
-git clone <repository-url>
+git clone https://github.com/kevinlmf/ML_Price_Prediction.git
 cd LLM_Price_Prediction
 
 # 2. Install dependencies
@@ -321,15 +293,5 @@ black prediction/ data/
 
 ## 📄 License
 
-This project is licensed under the MIT License - see `LICENSE` file for details.
-
-## 🙏 Acknowledgments
-
-- **Yahoo Finance**: Stock price data
-- **PyTorch**: Deep learning framework  
-- **Scikit-learn**: Machine learning utilities
-- **Pandas**: Data manipulation
-
----
-
-**Disclaimer**: This system is for research and educational purposes. Past performance does not guarantee future results. Always conduct thorough testing before deploying with real capital.
+This project is licensed under the MIT License - see `LICENSE` file for details.  
+Copyright (c) 2025 **Mengfan Long ([@kevinlmf](https://github.com/kevinlmf))**
