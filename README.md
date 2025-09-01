@@ -262,34 +262,6 @@ lstm_results, traditional_results = compare_strategies()
 - **Stress Testing**: Monte Carlo scenario analysis
 - **Dynamic Hedging**: Automated risk hedging
 
-## 📚 References & Theory
-
-### Academic Papers
-1. "Deep Learning for Portfolio Optimization" - Jiang et al.
-2. "Copula Methods in Finance" - Cherubini et al.
-3. "Machine Learning for Asset Management" - López de Prado
-
-### Key Concepts
-- **Modern Portfolio Theory**: Markowitz optimization
-- **Copula Theory**: Dependency modeling
-- **Deep Learning**: Neural network architectures
-- **Risk Parity**: Alternative weighting schemes
-
-## 🤝 Contributing
-
-We welcome contributions! Please see `CONTRIBUTING.md` for guidelines.
-
-### Development Setup
-```bash
-# Install development dependencies
-pip install -r requirements-dev.txt
-
-# Run tests
-python -m pytest tests/
-
-# Code formatting
-black prediction/ data/
-```
 
 ## 📄 License
 
