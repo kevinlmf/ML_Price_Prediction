@@ -1,0 +1,70 @@
+# LLM Price Prediction - 数据收集配置文件
+
+# 数据配置
+data:
+  # 股票代码列表
+  symbols:
+    - "AAPL"    # 苹果
+    - "MSFT"    # 微软  
+    - "GOOGL"   # 谷歌
+    - "TSLA"    # 特斯拉
+    - "NVDA"    # 英伟达
+    - "AMZN"    # 亚马逊
+    - "META"    # Meta
+    - "NFLX"    # 奈飞
+    - "AMD"     # AMD
+    - "CRM"     # Salesforce
+  
+  # 日期范围 (YYYY-MM-DD 格式，留空则自动计算)
+  start_date: ""  # 留空表示往前365天
+  end_date: ""    # 留空表示今天
+  
+  # 新闻数据天数
+  news_days_back: 30
+  
+  # 数据收集参数
+  sleep_between_requests: 1.0  # API请求间隔（秒）
+
+# LSTM训练参数
+model:
+  sequence_length: 30        # 序列长度（天）
+  target_column: "Price_Direction"  # 预测目标: Price_Direction (涨跌) 或 Price_Change_Pct (涨跌幅)
+  
+  # 特征工程参数
+  lag_features: [1, 2, 3, 5]           # 滞后特征天数
+  rolling_windows: [5, 10, 20]         # 滚动窗口大小
+  news_rolling_windows: [3, 7, 14]     # 新闻滚动窗口
+
+# 输出配置
+output:
+  base_dir: "./"              # 基础输出目录
+  save_individual_stocks: true # 是否保存单个股票文件
+  save_sequences: true        # 是否保存LSTM序列
+  file_format: "csv"          # 文件格式: csv 或 jsonl
+
+# API配置 (可选)
+apis:
+  # NewsAPI配置 (需要从环境变量获取或手动设置)
+  newsapi:
+    enabled: true
+    key: ""  # 留空从环境变量 NEWSAPI_KEY 获取
+    
+  # Yahoo Finance (免费，无需密钥)
+  yfinance:
+    enabled: true
+
+# 数据质量控制
+quality:
+  min_data_points: 30         # 每个股票最少数据点
+  remove_outliers: true       # 是否移除异常值
+  outlier_threshold: 3.0      # 异常值阈值（标准差倍数）
+  
+  # 缺失值处理
+  missing_value_strategy: "forward_fill"  # forward_fill, interpolate, drop
+  max_missing_ratio: 0.1      # 最大缺失比例
+
+# 日志配置
+logging:
+  level: "INFO"               # DEBUG, INFO, WARNING, ERROR
+  show_progress: true         # 是否显示进度条
+  save_log: false             # 是否保存日志文件
